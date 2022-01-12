@@ -13,6 +13,4 @@ else if(playerInput == "2") {
 else if(playerInput == "3") {
     playerMove = "nożyce";
 }
-
-
-printMessage('Twój ruch to: ' + playerMove);
+window.printMessage('Twój ruch to: ' + playerMove);
