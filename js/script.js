@@ -1,18 +1,30 @@
-let randomNumber = Math.floor(Math.random() * 3 + 1);
-let playerMove = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-let argPlayerMove = getMoveName(playerMove);
-let argComputerMove = getMoveName(randomNumber);
 
-function getMoveName(argMoveId){
-    if(argMoveId == 1){
-      return 'kamień';
-    }
-    if(argMoveId == 2){
-        return 'papier';
+document.getElementById("play-rock").addEventListener("click", function() {
+  playGame(1);
+});
+document.getElementById("play-paper").addEventListener("click", function() {
+  playGame(2);
+});
+document.getElementById("play-scissors").addEventListener("click", function() {
+  playGame(3);
+});
+
+function playGame(argMoveId) {
+  clearMessages();
+  let randomNumber = Math.floor(Math.random() * 3 + 1);
+  let argPlayerMove = getMoveName(argMoveId);
+  let argComputerMove = getMoveName(randomNumber);
+
+  function getMoveName(argMoveId){
+      if(argMoveId == 1){
+        return printMessage('kamień');
       }
-      if(argMoveId == 3){
-        return 'nożyce';
-      }
-    
+      else if (argMoveId == 2){
+        return printMessage('papier');
+        }
+      else if(argMoveId == 3){
+          return printMessage('nożyce');
+        }
+  }
+  //console.log('moves:', argComputerMove, argPlayerMove);
 }
-console.log('moves:', argComputerMove, argPlayerMove);
